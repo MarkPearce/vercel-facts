@@ -33,10 +33,9 @@ const ImageWithFallback = ({ src, alt, ...props }) => {
 
   return (
     <div 
-      className={`relative w-full ${props.className || ''}`} 
+      className={`relative w-full mb-12 ${props.className || ''}`}
       style={{ 
         maxWidth: '800px',
-        margin: '0 auto',
         aspectRatio: ratio
       }}
     >
@@ -116,8 +115,9 @@ const FactCheck = () => {
       <main className="w-full max-w-screen-xl mx-auto">
         <div className="max-w-[800px] mx-auto px-4 py-8">
           <div className="bg-white shadow rounded-lg overflow-visible">
-            <div className="p-6 border-b border-gray-200">
-              <div className="flex items-center gap-4 mb-6">
+            <div className="bg-gray-100 p-4 border-b border-gray-200">
+              <div className="text-sm text-gray-600 mb-3">Original Article</div>
+              <div className="flex items-center gap-4">
                 <div className="relative w-24 h-8">
                   <Image
                     src="/images/Fox_News_Channel_logo.svg"
@@ -136,7 +136,9 @@ const FactCheck = () => {
                   Trump, SoftBank CEO announce $100B investment in critical infrastructure, AI
                 </a>
               </div>
+            </div>
 
+            <div className="p-6">
               <div className="prose max-w-none">
                 <p className="mb-4">
                   President-elect Donald Trump and Softbank CEO Masayoshi Son announced Monday a <Highlight text="$100 billion investment" details={highlights["100,000 jobs"]} /> in America aimed at generating 100,000 new jobs.
@@ -149,7 +151,6 @@ const FactCheck = () => {
                 <ImageWithFallback 
                   src="/images/image-1.webp"
                   alt="President-elect Donald Trump delivers remarks next to Chairman and CEO of SoftBank Masayoshi Son, at Mar-a-Lago in Palm Beach, Fla., on Monday, Dec. 16"
-                  className="my-6 pb-6"
                 />
 
                 <p className="mb-4">
@@ -159,7 +160,6 @@ const FactCheck = () => {
                 <ImageWithFallback 
                   src="/images/image-2.webp"
                   alt="President-elect Donald Trump, left, walks out with SoftBank Group Corp founder and CEO Masayoshi Son to speak to members of the media in the lobby at Trump Tower in New York City in December 2016"
-                  className="my-6 pb-6"
                 />
 
                 <p className="mb-4">
@@ -201,7 +201,6 @@ const FactCheck = () => {
                 <ImageWithFallback 
                   src="/images/image-3.webp"
                   alt="SoftBank's Vision Fund invested in WeWork, an office-sharing company that filed for bankruptcy last year"
-                  className="my-6 pb-6"
                 />
 
                 <p className="mb-4">
