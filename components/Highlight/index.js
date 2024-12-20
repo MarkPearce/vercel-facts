@@ -6,6 +6,7 @@ const Highlight = ({ text, details, activeHighlight, setActiveHighlight }) => {
   const [isHovered, setIsHovered] = useState(false);
   const popoverRef = useRef(null);
   const timeoutRef = useRef(null);
+  const [popoverPosition, setPopoverPosition] = useState({ top: true, left: 0 });
 
   useEffect(() => {
     if (activeHighlight && activeHighlight !== text) {
@@ -15,6 +16,80 @@ const Highlight = ({ text, details, activeHighlight, setActiveHighlight }) => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, [activeHighlight, text]);
+
+  useEffect(() => {
+    if (isHovered && popoverRef.current) {
+      const popover = popoverRef.current;
+      
+      const resizeObserver = new ResizeObserver(() => {
+        if (!popover || !popover.parentElement) return;
+        
+        const parent = popover.parentElement;
+        const popoverRect = popover.getBoundingClientRect();
+        
+        // Get the position of the first character
+        const range = document.createRange();
+        range.setStart(parent.firstChild, 0);
+        range.setEnd(parent.firstChild, 1);
+        const firstCharRect = range.getBoundingClientRect();
+        
+        // Find the nearest scrollable container
+        let container = parent;
+        while (container && container !== document.body) {
+          const style = window.getComputedStyle(container);
+          if (style.overflow === 'auto' || style.overflow === 'scroll' || 
+              style.overflowX === 'auto' || style.overflowX === 'scroll') {
+            break;
+          }
+          container = container.parentElement;
+        }
+        
+        const POPOVER_WIDTH = 320;
+        const VIEWPORT_PADDING = 20;
+        
+        // Round all our base measurements
+        const spanLeft = Math.round(firstCharRect.left);
+        const spanWidth = Math.round(parent.offsetWidth);
+        const containerWidth = container ? Math.round(container.clientWidth) : Math.round(window.innerWidth);
+        const safeZoneEnd = containerWidth - VIEWPORT_PADDING;
+        const rightEdgePosition = Math.round(spanLeft + POPOVER_WIDTH);
+        
+        // Calculate left offset to keep popover within container
+        let leftOffset = 0;
+        
+        // If the popover would go beyond the safe zone, adjust it
+        if (rightEdgePosition > safeZoneEnd) {
+          leftOffset = safeZoneEnd - rightEdgePosition;
+        }
+        
+        // If pushing left would push too far left, try centering
+        if ((spanLeft + leftOffset) < VIEWPORT_PADDING) {
+          if (POPOVER_WIDTH > spanWidth) {
+            // Try centering over the highlight
+            leftOffset = -(POPOVER_WIDTH - spanWidth) / 2;
+            
+            // Ensure we don't go beyond the container edges
+            if ((spanLeft + leftOffset) < VIEWPORT_PADDING) {
+              leftOffset = VIEWPORT_PADDING - spanLeft;
+            } else if ((spanLeft + leftOffset + POPOVER_WIDTH) > safeZoneEnd) {
+              leftOffset = safeZoneEnd - (spanLeft + POPOVER_WIDTH);
+            }
+          }
+        }
+
+        // Round the final offset
+        leftOffset = Math.round(leftOffset);
+
+        setPopoverPosition({
+          top: !(popoverRect.bottom > window.innerHeight - 100),
+          left: leftOffset
+        });
+      });
+      
+      resizeObserver.observe(popover);
+      return () => resizeObserver.disconnect();
+    }
+  }, [isHovered]);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -74,11 +149,15 @@ const Highlight = ({ text, details, activeHighlight, setActiveHighlight }) => {
       {(isHovered && activeHighlight === text) && (
         <div 
           ref={popoverRef}
-          className="absolute z-50 bg-white shadow-lg rounded-lg border border-gray-200 w-80" 
+          className="absolute z-50 bg-white shadow-lg rounded-lg border border-gray-200"
           style={{
-            left: 0,
-            top: 0,
-            transform: 'translateY(-100%) translateY(-0.5rem)'
+            maxWidth: 'min(320px, calc(100vw - 40px))',
+            width: '320px',
+            left: popoverPosition.left,
+            ...(popoverPosition.top
+              ? { bottom: '100%', marginBottom: '0.5rem' }
+              : { top: '100%', marginTop: '0.5rem' }
+            )
           }}
           onMouseEnter={handlePopoverMouseEnter}
           onMouseLeave={handlePopoverMouseLeave}
