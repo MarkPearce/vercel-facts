@@ -77,7 +77,14 @@ export const highlights = {
     type: "language",
     category: "metaphor",
     impact: "Creates sense of urgency and opportunity",
-    summary: "Uses gold rush imagery to suggest an AI arms race"
+    summary: "Uses gold rush imagery to suggest an risk of missing out"
+  },
+
+  "100,000 American jobs at a minimum": {
+    type: "fact-check",
+    summary: "This claim requires scrutiny. SoftBank's previous job creation promises from 2016 were not fully verified, and similar large-scale job commitments have historically faced challenges in verification and implementation.",
+    source: "Reuters",
+    link: "https://www.reuters.com/article/us-usa-trump-softbank-idUSKBN13V2LG"
   }
 };
 

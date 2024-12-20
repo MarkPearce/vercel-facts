@@ -65,13 +65,7 @@ const ArticleContent = ({ activeHighlight, setActiveHighlight }) => {
         </div>
         
         <div className="mb-6">
-          "This historic investment is a monumental demonstration of confidence in America's future. And it will help ensure that{' '}
-          <Highlight 
-            text="artificial intelligence, emerging technologies and other industries of tomorrow" 
-            details={highlights["artificial intelligence, emerging technologies and other industries of tomorrow"]}
-            activeHighlight={activeHighlight}
-            setActiveHighlight={setActiveHighlight}
-          /> are built, created and grown right here in the USA," Trump added.
+          "This historic investment is a monumental demonstration of confidence in America's future. And it will help ensure that artificial intelligence, emerging technologies and other industries of tomorroware built, created and grown right here in the USA," Trump added.
         </div>
 
         <figure className="mb-6">
@@ -176,13 +170,7 @@ const ArticleContent = ({ activeHighlight, setActiveHighlight }) => {
         </div>
 
         <div className="mb-6">
-          Son was cited as saying in October that he believes{' '}
-          <Highlight 
-            text="computers will possess human-level cognitive abilities within the next two to three years" 
-            details={highlights["computers will possess human-level cognitive abilities within the next two to three years"]}
-            activeHighlight={activeHighlight}
-            setActiveHighlight={setActiveHighlight}
-          />.
+          Son was cited as saying in October that he believes computers will possess human-level cognitive abilities within the next two to three years.
         </div>
 
         <div className="mb-6">
