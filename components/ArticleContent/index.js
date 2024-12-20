@@ -65,7 +65,7 @@ const ArticleContent = ({ activeHighlight, setActiveHighlight }) => {
         </div>
         
         <div className="mb-6">
-          "This historic investment is a monumental demonstration of confidence in America's future. And it will help ensure that artificial intelligence, emerging technologies and other industries of tomorroware built, created and grown right here in the USA," Trump added.
+          "This historic investment is a monumental demonstration of confidence in America's future. And it will help ensure that artificial intelligence, emerging technologies and other industries of tomorrow are built, created and grown right here in the USA," Trump added.
         </div>
 
         <figure className="mb-6">

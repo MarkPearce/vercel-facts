@@ -77,7 +77,7 @@ export const highlights = {
     type: "language",
     category: "metaphor",
     impact: "Creates sense of urgency and opportunity",
-    summary: "Uses gold rush imagery to suggest an risk of missing out"
+    summary: "Uses gold rush imagery to suggest a risk of missing out"
   },
 
   "100,000 American jobs at a minimum": {
