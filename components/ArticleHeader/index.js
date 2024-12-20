@@ -21,7 +21,7 @@ const ArticleHeader = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        Trump, SoftBank CEO announce $100B investment in critical infrastructure, AI
+        SoftBank CEO and Trump announce $100 billion investment in U.S. by firm
       </a>
     </div>
   </div>

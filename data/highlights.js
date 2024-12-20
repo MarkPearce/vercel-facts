@@ -52,6 +52,24 @@ export const highlights = {
     summary: "Characterizes business announcement in competitive terms",
     category: "competitive framing",
     impact: "Frames business deal as political victory"
+  },
+  "most successful investors in the world": {
+    type: "language",
+    category: "hyperbole",
+    impact: "Exaggeration to build credibility",
+    summary: "Uses superlative language without specific metrics or rankings"
+  },
+  "very optimistic about our country since the election": {
+    type: "language",
+    category: "political framing",
+    impact: "Links business confidence directly to election outcome",
+    summary: "Suggests causation between election and investment decision"
+  },
+  "A gold rush of intelligence has arrived": {
+    type: "language",
+    category: "metaphor",
+    impact: "Creates sense of urgency and opportunity",
+    summary: "Uses gold rush imagery to suggest an AI arms race"
   }
 };
 
