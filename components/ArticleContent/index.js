@@ -68,17 +68,6 @@ const ArticleContent = ({ activeHighlight, setActiveHighlight }) => {
           "This historic investment is a monumental demonstration of confidence in America's future. And it will help ensure that artificial intelligence, emerging technologies and other industries of tomorrow are built, created and grown right here in the USA," Trump added.
         </div>
 
-        <figure className="mb-6">
-          <ImageWithFallback 
-            src="/images/image-1.webp"
-            alt="President-elect Donald Trump delivers remarks next to Chairman and CEO of SoftBank Masayoshi Son"
-            className="w-full rounded-lg"
-          />
-          <figcaption className="text-sm text-gray-600 mt-2 text-center">
-            President-elect Donald Trump with SoftBank CEO Masayoshi Son at Trump Tower
-          </figcaption>
-        </figure>
-
         <div className="mb-6">
           Trump also said "we will not rest until{' '}
           <Highlight 
