@@ -66,7 +66,7 @@ const Highlight = ({ text, details, activeHighlight, setActiveHighlight }) => {
 
   return (
     <span 
-      className={`${highlightStyles[details.type]} cursor-pointer relative inline-block`}
+      className={`${highlightStyles[details.type]} cursor-pointer inline relative`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -74,8 +74,12 @@ const Highlight = ({ text, details, activeHighlight, setActiveHighlight }) => {
       {(isHovered && activeHighlight === text) && (
         <div 
           ref={popoverRef}
-          className="absolute z-50 bg-white shadow-lg rounded-lg border border-gray-200 w-80 mt-2" 
-          style={{ left: '0', transform: 'none' }}
+          className="absolute z-50 bg-white shadow-lg rounded-lg border border-gray-200 w-80" 
+          style={{
+            left: 0,
+            top: 0,
+            transform: 'translateY(-100%) translateY(-0.5rem)'
+          }}
           onMouseEnter={handlePopoverMouseEnter}
           onMouseLeave={handlePopoverMouseLeave}
           role="tooltip"

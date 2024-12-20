@@ -96,13 +96,7 @@ const ArticleContent = ({ activeHighlight, setActiveHighlight }) => {
         </div>
 
         <div className="mb-6">
-          Son said he is{' '}
-          <Highlight 
-            text="very excited" 
-            details={highlights["very excited"]}
-            activeHighlight={activeHighlight}
-            setActiveHighlight={setActiveHighlight}
-          /> about the investment.
+          Son said he is very excited about the investment.
         </div>
 
         <div className="mb-6">

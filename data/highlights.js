@@ -19,52 +19,60 @@ export const highlights = {
   },
   "monumental demonstration of confidence": {
     type: "language",
-    summary: "This phrase uses emotional language to frame the investment as historically significant without providing context for comparison.",
     category: "hyperbole",
-    impact: "Creates an impression of unprecedented importance"
+    impact: "Emphasizes significance of investment",
+    summary: "Uses grandiose language to describe business decision"
   },
-  "very excited": {
-    type: "language",
-    summary: "Emphasis on emotional response rather than business specifics",
-    category: "emotional appeal",
-    impact: "Shifts focus from financial details to personal enthusiasm"
-  },
-  "great victory": {
-    type: "language",
-    summary: "Frames a business deal in terms of political victory, potentially mixing business and political narratives",
-    category: "political framing",
-    impact: "Blends business announcement with political messaging"
-  },
-  "tremendously increased": {
-    type: "language",
-    summary: "Uses intensifier without quantifiable metrics",
-    category: "vague amplification",
-    impact: "Suggests significant change without specific measurement"
-  },
-  "will not rest": {
-    type: "language",
-    summary: "Dramatic commitment using absolute terms",
-    category: "absolute statement",
-    impact: "Creates emotional appeal through dramatic promise"
-  },
-  "huge win": {
-    type: "language",
-    summary: "Characterizes business announcement in competitive terms",
-    category: "competitive framing",
-    impact: "Frames business deal as political victory"
-  },
+
   "most successful investors in the world": {
     type: "language",
     category: "hyperbole",
     impact: "Exaggeration to build credibility",
     summary: "Uses superlative language without specific metrics or rankings"
   },
+
   "very optimistic about our country since the election": {
     type: "language",
     category: "political framing",
     impact: "Links business confidence directly to election outcome",
     summary: "Suggests causation between election and investment decision"
   },
+
+  "very excited": {
+    type: "language",
+    category: "emphasis",
+    impact: "Emotional reinforcement",
+    summary: "Uses emotional language to support investment announcement"
+  },
+
+  "great victory": {
+    type: "language",
+    category: "political framing",
+    impact: "Reinforces election narrative",
+    summary: "Links business decision to political outcome"
+  },
+
+  "tremendously increased": {
+    type: "language",
+    category: "hyperbole",
+    impact: "Emphasizes change in confidence",
+    summary: "Uses intensifier to suggest dramatic shift in outlook"
+  },
+
+  "huge win": {
+    type: "language",
+    category: "political framing",
+    impact: "Frames business deal as political victory",
+    summary: "Characterizes investment as political achievement"
+  },
+
+  "America is richer, safer and stronger than it has ever been before": {
+    type: "language",
+    category: "hyperbole",
+    impact: "Creates an absolute claim about national progress",
+    summary: "Uses sweeping language to suggest unprecedented levels of prosperity and security"
+  },
+
   "A gold rush of intelligence has arrived": {
     type: "language",
     category: "metaphor",
